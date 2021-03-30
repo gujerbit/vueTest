@@ -9,16 +9,24 @@
 </head>
 <body>
     <div id="app">
-
+        <form @submit.prevent="submit()">
+            <input type="text" v-model="text">
+                {{text}}
+            <input type="submit" value="제출">
+        </form>
     </div>
     <script>
         new Vue({
             el: '#app',
             data: {
-                
+                year: 2021,
+                text: 'text'
             },
             methods: {
-                
+                submit() {
+                    alert('submited');
+                    console.log('hello');
+                }
             }
         });
     </script>
