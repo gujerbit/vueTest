@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{people[0].name}} {{people[0].age}} <br>
+        {{people[1].name}} {{people[1].age}} <br>
+        {{people[2].name}} {{people[2].age}} <br>
+        {{people[3].name}} {{people[3].age}} <br>
+        <hr>
+        <div v-for="(person, index) in people" :key="person.name + '-' + person.age">
+            {{person.name}} {{person.age}} {{person.tel}}
+        </div>
+        <!-- v-for = "person of people" -->
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                people: [
+                    {
+                        name: 'kim',
+                        age: 20,
+                        tel: '01012345678'
+                    },
+                    {
+                        name: 'hong',
+                        age: 21
+                    },
+                    {
+                        name: 'park',
+                        age: 22
+                    },
+                    {
+                        name: 'lee',
+                        age: 23
+                    }
+                ]
+            },
+            methods: {
+                
+            }
+        });
+    </script>
+</body>
+</html>

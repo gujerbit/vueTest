@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{show}} <br>
+        <div v-if="show">yes</div>
+        <div v-else="show">no</div>
+        <template v-if="show">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </template>
+        <button @click="toggleShow">Toggle</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show: true
+                //show: false
+                //false라면 브라우저 출력이 없음 = div 태그가 랜더링이 안된다.
+            },
+            methods: {
+                toggleShow() {
+                    this.show = !this.show;
+                }         
+            }
+        });
+    </script>
+</body>
+</html>
