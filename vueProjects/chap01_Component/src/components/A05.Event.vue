@@ -7,7 +7,7 @@
         Num: {{num}}<br>
         <button v-on:click="num++">+1</button>
         <button @click="decrease">-1</button>
-        <button @click="decrease">once</button>
+        <button @click.once="decrease">once</button>
         <br>
         <br>
         
@@ -24,11 +24,11 @@
         </div>
         <br>
 
-        <input type="text" class="form-control" /><br>
-        esc: <input type="text" class="form-control" v-model="name" /><br>
-        Enter: <input type="text" class="form-control" v-model="msg" /><br>
+        <input type="text" class="form-control" @keyup="keyUpEvent"/><br>
+        esc: <input type="text" class="form-control" v-model="name" @keyup.esc="escEvent"/><br>
+        Enter: <input type="text" class="form-control" v-model="msg" @keyup.enter="helpEvent"/><br>
         <!-- 다른 조합도 적용됨 -->
-        Alt + Enter<input type="text" class="form-control" v-model="msg" /><br>
+        Alt + Enter<input type="text" class="form-control" v-model="msg" @keyup.enter.alt="showEvent"/><br>
         <br>
     
   </div>
@@ -66,6 +66,8 @@ export default {
         },
         keyUpEvent: function(evt) {
             console.log(evt);
+
+            if(evt.keyCode === 27) evt.target.value = '';
         },
         escEvent: function() {
             this.name = '';
