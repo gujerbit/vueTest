@@ -6,6 +6,9 @@
     <!-- <temp></temp> -->
     <h1>Vue Components</h1>
     <binding></binding>
+    <repeater></repeater>
+    <lifeCycle></lifeCycle>
+    <event></event>
     <!-- <binding/> -->
   </div>
 </template>
@@ -14,13 +17,19 @@
 // import HelloWorld from './components/HelloWorld.vue'
 // import temp from './components/A01.Currency.vue'
 import binding from './components/02_Binding.vue'
+import repeater from './components/A03.Repeater.vue'
+import lifeCycle from './components/A04.LifeCycle.vue'
+import event from './components/A05.Event.vue'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
     // temp,
-    binding
+    binding,
+    repeater,
+    lifeCycle,
+    event
   }
 }
 </script>
