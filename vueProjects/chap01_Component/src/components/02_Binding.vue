@@ -10,25 +10,30 @@
             v-once: <span v-once>{{text}}</span><br>
             <!-- v-pre: <span></span><br> -->
             <br>
-            <button>Change</button>
-            <button>Change</button>
+            <button v-on:click="changeText('Nolbu')">Nolbu</button> &nbsp;
+            <button @click="changeText('<b>Hungbu</b>')">Hungbu</button>
             <br>
             <br>
-            
-            <input type="text">
-            <input type="text">
-            <input type="text">
+            {{num}} <br>
+            <input type="text" class="form-control" v-model="num">
+            <input type="text" v-bind:class="formControl" v-model="num">
+            <input type="text" :class="formControl" v-model="num">
             <br>
             
-            <input type="checkbox" value="apple">사과, 
-            <input type="checkbox" value="banana">바나나, 
-            <input type="checkbox" value="melon">멜론<br>
+            <input type="checkbox" value="apple" v-model="fruit">사과, 
+            <input type="checkbox" value="banana" v-model="fruit">바나나, 
+            <input type="checkbox" value="melon" v-model="fruit">멜론<br>
             
-            <div></div>
-            <div><span></span></div>
+            <div>당신이 선택한 과일은 {{fruit}}</div>
+            <div>
+                <span v-for="(item, i) in fruit" :key="item">
+                    {{item}} {{i !== fruit.length - 1 ? ',' : ''}}
+                </span>
+            </div>
         <br>
 
-        computed: <br>
+        computed: {{one}} <br>
+        methods: {{two()}}<br>
         <br>
       
     </div>
@@ -41,7 +46,43 @@ export default {
     data() {
         return {
             title: '2.Binding',
-            text: '<b>Hello World</b>'
+            text: '<b>Hello World</b>',
+            num: 10,
+            formControl: 'form-control',
+            fruit: []
+        }
+    },
+    methods: {
+        changeText: function(val) {
+            this.text = val;
+        },
+        two() {
+            console.log('methods');
+            let total = 0;
+            let x = Number(this.num);
+
+            if(isNaN(x)) total = 0;
+
+            for(let i = 0; i <= x; i++) {
+                total += i;
+            }
+
+            return total;
+        }
+    },
+    computed: {
+        one: function() {
+            console.log('computed');
+            let total = 0;
+            let x = Number(this.num);
+
+            if(isNaN(x)) total = 0;
+
+            for(let i = 0; i <= x; i++) {
+                total += i;
+            }
+
+            return total;
         }
     }
 }
