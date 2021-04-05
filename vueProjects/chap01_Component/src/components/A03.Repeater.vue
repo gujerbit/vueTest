@@ -4,19 +4,20 @@
         <br>
 
         <h5>v-show</h5>
-        <div>
+        <div v-show="check">
             v-show가 있는 엘리먼트는 항상 렌더링 되고 DOM에 남아있다는 점입니다. v-show는 단순히 엘리먼트에 display CSS 속성을 토글합니다.
         </div>
         <br />
 
         <h5>v-if</h5>
-        <div>
+        <!-- v-if, v-else-if, v-else는 연속적으로 있어야 오류없이 작동함 -->
+        <div v-if="name === 'nolbu'">
             Vue에서는 v-if 디렉티브를 사용하여 조건부 블럭을 작성할 수 있습니다.
         </div>
-        <div>
+        <div v-else-if="name === 'hungbu'">
             v-else-if는 이름에서 알 수 있듯, v-if에 대한 “else if 블록” 역할을 합니다. 또한 여러 개를 사용할 수 있습니다.
         </div>
-        <div>
+        <div v-else>
             v-else 디렉티브를 사용하여 v-if에 대한 “else 블록”을 나타낼 수 있습니다
         </div>
         <br>
@@ -33,21 +34,21 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <tr v-for="(item, i) in students" :key="item.name">
+                <td>{{i}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.kor}}</td>
+                <td>{{item.eng}}</td>
             </tr>
         </tbody>
         </table>
         <br>
 
         <div>
-            <button class="btn btn-outline-primary btn-sm" @click="changeCheck()">Check</button>
-            <button class="btn btn-outline-primary btn-sm" @click="changeName('nolbu')">IF</button>
-            <button class="btn btn-outline-primary btn-sm" @click="changeName('hungbu')">Else IF</button>
+            <button class="btn btn-outline-primary btn-sm" @click="changeCheck()">Check</button> &nbsp;
+            <button class="btn btn-outline-primary btn-sm" @click="changeName('nolbu')">IF</button> &nbsp;
+            <button class="btn btn-outline-primary btn-sm" @click="changeName('hungbu')">Else IF</button> &nbsp;
             <button class="btn btn-outline-primary btn-sm" @click="changeName('bangja')">Else</button><br>
         </div>
   </div>

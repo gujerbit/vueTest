@@ -5,8 +5,8 @@
     <!-- <h1>Vue Components</h1> -->
     <!-- <temp></temp> -->
     <h1>Vue Components</h1>
-    <!-- <event></event>
-    <lifeCycle></lifeCycle> -->
+    <!-- <event></event> -->
+    <lifeCycle></lifeCycle>
     <repeater></repeater>
     <binding></binding>
     <!-- <binding/> -->
@@ -18,7 +18,7 @@
 // import temp from './components/A01.Currency.vue'
 import binding from './components/02_Binding.vue'
 import repeater from './components/A03.Repeater.vue'
-// import lifeCycle from './components/A04.LifeCycle.vue'
+import lifeCycle from './components/A04.LifeCycle.vue'
 // import event from './components/A05.Event.vue'
 
 export default {
@@ -28,7 +28,7 @@ export default {
     // temp,
     binding,
     repeater,
-    // lifeCycle,
+    lifeCycle,
     // event
   }
 }
