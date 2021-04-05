@@ -5,10 +5,10 @@
     <!-- <h1>Vue Components</h1> -->
     <!-- <temp></temp> -->
     <h1>Vue Components</h1>
-    <binding></binding>
+    <!-- <event></event>
+    <lifeCycle></lifeCycle> -->
     <repeater></repeater>
-    <lifeCycle></lifeCycle>
-    <event></event>
+    <binding></binding>
     <!-- <binding/> -->
   </div>
 </template>
@@ -18,8 +18,8 @@
 // import temp from './components/A01.Currency.vue'
 import binding from './components/02_Binding.vue'
 import repeater from './components/A03.Repeater.vue'
-import lifeCycle from './components/A04.LifeCycle.vue'
-import event from './components/A05.Event.vue'
+// import lifeCycle from './components/A04.LifeCycle.vue'
+// import event from './components/A05.Event.vue'
 
 export default {
   name: 'App',
@@ -28,8 +28,8 @@ export default {
     // temp,
     binding,
     repeater,
-    lifeCycle,
-    event
+    // lifeCycle,
+    // event
   }
 }
 </script>
