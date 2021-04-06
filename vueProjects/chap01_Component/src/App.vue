@@ -5,6 +5,7 @@
     <!-- <h1>Vue Components</h1> -->
     <!-- <temp></temp> -->
     <h1>Vue Components</h1>
+    <formComponent />
     <styleClass></styleClass>
     <event></event>
     <lifeCycle></lifeCycle>
@@ -17,11 +18,12 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 // import temp from './components/A01.Currency.vue'
-import binding from './components/02_Binding.vue'
-import repeater from './components/A03.Repeater.vue'
-import lifeCycle from './components/A04.LifeCycle.vue'
-import event from './components/A05.Event.vue'
-import styleClass from './components/A06.StyleClass.vue'
+import binding from './components/02_Binding.vue';
+import repeater from './components/A03.Repeater.vue';
+import lifeCycle from './components/A04.LifeCycle.vue';
+import event from './components/A05.Event.vue';
+import styleClass from './components/A06.StyleClass.vue';
+import formComponent from './components/A07.Form.vue';
 
 export default {
   name: 'App',
@@ -32,7 +34,8 @@ export default {
     repeater,
     lifeCycle,
     event,
-    styleClass
+    styleClass,
+    formComponent
   }
 }
 </script>
