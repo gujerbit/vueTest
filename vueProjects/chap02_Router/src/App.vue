@@ -1,17 +1,22 @@
 <template>
   <div>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    라우터 실습 | 
+    <router-link to="/">INDEX</router-link> | 
+    <router-link to="/home">HOME</router-link> | 
+    <router-link to="/about">ABOUT</router-link> | 
+    <router-link to="/params">PARAMS</router-link> | 
+    <router-link to="/child">CHILD</router-link> | 
+    <router-link to="/notFound">NOTFOUND</router-link> | 
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+
   }
 }
 </script>
