@@ -18,9 +18,10 @@ const routes = [
         component: home
     },
     {
-        path: '/about',
+        path: '/about/:id/data/:name',
         name: 'about',
-        component: about
+        component: about,
+        props: true
     },
     {
         path: '/params',
@@ -30,22 +31,22 @@ const routes = [
     {
         path: '/child',
         name: 'child',
-        component: child
+        component: child,
+        children: [
+            {
+                path: '/child/profile',
+                component: profile
+            },
+            {
+                path: '/child/userInfo',
+                component: userInfo
+            }
+        ]
     },
     {
-        path: '/notFound',
+        path: '/:catchAll(.*)',
         name: 'notFound',
         component: notFound
-    },
-    {
-        path: '/child/profile',
-        name: 'profile',
-        component: profile
-    },
-    {
-        path: '/child/userInfo',
-        name: 'userInfo',
-        component: userInfo
     }
 ];
 

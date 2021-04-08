@@ -3,10 +3,10 @@
     라우터 실습 | 
     <router-link to="/">INDEX</router-link> | 
     <router-link to="/home">HOME</router-link> | 
-    <router-link to="/about">ABOUT</router-link> | 
+    <router-link to="/about/100/data/Nolbu">ABOUT</router-link> | 
     <router-link to="/params">PARAMS</router-link> | 
     <router-link to="/child">CHILD</router-link> | 
-    <router-link to="/notFound">NOTFOUND</router-link> | 
+    <router-link to="/d">NOTFOUND</router-link> | 
     <router-view></router-view>
   </div>
 </template>
